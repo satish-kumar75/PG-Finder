@@ -1,0 +1,377 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8bb2bb69;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.pg-card {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.265), transparent);
+    border-radius: 5px;
+    width: 315px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s, box-shadow 0.3s;
+}
+
+.pg-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(45deg, rgba(42, 38, 38, 0.1), rgba(0, 0, 0, 0.1)); */
+    background: linear-gradient(to right, rgba(187, 215, 222, 0.265), transparent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    z-index: -1;
+    transition: transform 0.3s;
+}
+
+.pg-card:hover::before {
+    transform: scaleX(1);
+}
+
+.pg-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 7px 9px 14px rgb(15 14 14 / 43%);
+}
+
+.center-div {
+    text-align: center;
+    display: none;
+}
+
+.image-card {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.pg-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.pg-card img:hover {
+    transform: scale(1.2);
+}
+
+.pg-card h2 {
+    margin: 10px 0;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.desc {
+    margin-top: 10px;
+    height: 80px;
+}
+
+form {
+    text-align: center;
+    margin: 100px 0 0 0;
+}
+
+.pg-card .read-more {
+    position: relative;
+    width: 155px;
+    height: 50px;
+    margin: 10px 0 0 60px;
+}
+
+.pg-card .read-more a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 2px 8px 35px rgb(0 0 0 / 57%);
+    border-top: 1px solid rgb(22 21 21 / 62%);
+    border-bottom: 1px solid rgb(0 0 0 / 62%);
+    border-radius: 30px;
+    color: #fff;
+    z-index: 1;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(15px);
+}
+
+.pg-card .read-more:hover a {
+    letter-spacing: 2px;
+}
+
+.pg-card .read-more a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.265), transparent);
+    transform: skewX(45deg) translateX(0);
+    transition: 0.5s;
+}
+
+.pg-card .read-more:hover a::before {
+    transform: skewX(45deg) translateX(200%);
+}
+
+.pg-card .read-more::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5%;
+    width: 30px;
+    height: 10px;
+    background: rgb(87, 75, 75);
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.pg-card .read-more:hover::before {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.3s;
+}
+
+.pg-card .read-more::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5%;
+    width: 30px;
+    height: 10px;
+    background: rgb(87, 75, 75);
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.pg-card .read-more:hover::after {
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.5s;
+}
+
+.pg-card .read-more::before,
+.pg-card .read-more::after {
+    background: rgb(87, 75, 75);
+    box-shadow: rgb(87, 75, 75),
+        rgb(87, 75, 75),
+        rgb(87, 75, 75),
+        rgb(87, 75, 75);
+}
+
+#button,
+#applyFilter {
+    padding: 11px;
+    border: 1px solid #000 !important;
+    color: #000;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s;
+}
+
+#button:hover,
+#applyFilter:hover {
+    background-color: #131313dc;
+    color: #fff;
+}
+
+#search {
+    padding: 9px;
+    width: 310px;
+    border-radius: 15px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border: 2px solid #fff;
+    backdrop-filter: blur(13px);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.265), #00000014);
+}
+
+::placeholder {
+    color: #fff;
+    opacity: 0.7;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+#minPrice,
+#maxPrice,
+#location {
+    padding: 9px;
+    width: 200px;
+    border-radius: 15px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border: 2px solid #fff;
+    backdrop-filter: blur(13px);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.265), #00000014);
+}
+
+
+/* Media Query for mobile devices */
+@media (max-width: 600px) {
+    form {
+        text-align: center;
+        margin: 25px 0 0 0;
+    }
+
+    #search {
+        width: 242px;
+    }
+
+    .filter {
+        flex-wrap: wrap;
+    }
+
+    #applyFilter {
+        width: 150px;
+    }
+
+    #minPrice,
+    #maxPrice,
+    #location {
+        width: 150px;
+    }
+}
+
+
+/* Open popups */
+.popupteam {
+    width: 900px;
+    height: 500px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 00%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+    visibility: hidden;
+    padding: 0px 30px 30px;
+    color: #333;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popupteam {
+    visibility: visible;
+    top: 65%;
+    z-index: 100;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popupteam p {
+    font-size: 20px;
+}
+
+.popupteam img {
+    width: 100px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.popupteam h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popupteam button {
+    float: right;
+    margin-top: 10px;
+    margin-right: -10px;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+    border: none;
+}
+
+.cardteam {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.cardteam h2 {
+    font-size: 20px;
+}
+
+.bablu p,
+.sumit p,
+.gyani p {
+    font-size: 14px;
+}
+
+.bablu,
+.sumit,
+.gyani {
+    height: auto;
+    width: 300px;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 1.3rem;
+}
+
+.bablu img,
+.sumit img,
+.gyani img {
+    height: 100px;
+}

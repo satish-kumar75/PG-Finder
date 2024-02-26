@@ -1,0 +1,39 @@
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.svg-cont {
+    margin-bottom: 2.5rem;
+}
+
+.home-btn {
+    color: #fff;
+    font-weight: 500;
+    width: 100px;
+    padding: 10px 24px;
+    border-radius: 100px;
+    background-color: #1748C6;
+    margin-bottom: 1.5rem;
+}
+
+.error-container p,
+h1 {
+    width: 400px;
+    margin-bottom: 1.2rem;
+
+}
+
+.error-container h1 {
+    font-weight: 500;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.error-container p {
+    text-align: center;
+    font-size: 1.2rem;
+}
